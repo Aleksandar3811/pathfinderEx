@@ -1,6 +1,7 @@
 package softuni.demo.patfinderEx.service;
 
 import org.modelmapper.ModelMapper;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import softuni.demo.patfinderEx.model.Picture;
@@ -15,9 +16,10 @@ import java.util.Random;
 @Service
 public class RouteService {
 
-    private RouteRepository routeRepository;
+    private final RouteRepository routeRepository;
     private Random random;
-    private ModelMapper modelMapper;
+    private final ModelMapper modelMapper;
+
 
 
     public RouteService(RouteRepository routeRepository) {

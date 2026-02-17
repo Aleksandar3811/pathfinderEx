@@ -31,6 +31,8 @@ dependencies {
     implementation("org.modelmapper:modelmapper:3.2.6")
     // Source: https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-validation
     implementation("org.springframework.boot:spring-boot-starter-validation:4.1.0-M1")
+    // Source: https://mvnrepository.com/artifact/org.springframework.security/spring-security-crypto
+    implementation("org.springframework.security:spring-security-crypto:7.1.0-M2")
 
 }
 
