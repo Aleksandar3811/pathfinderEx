@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import softuni.demo.patfinderEx.model.Level;
 import softuni.demo.patfinderEx.model.dto.UserRegisterDTO;
 
 @Controller
@@ -19,6 +20,7 @@ public class UserController {
     {
         ModelAndView mv = new ModelAndView();
         mv.addObject("registerData", new UserRegisterDTO());
+        mv.addObject("levels", Level.values());
         mv.setViewName("register");
         return mv;
     }

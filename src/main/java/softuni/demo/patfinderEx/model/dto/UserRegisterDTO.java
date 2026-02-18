@@ -1,6 +1,9 @@
 package softuni.demo.patfinderEx.model.dto;
 
 import jakarta.validation.constraints.*;
+import softuni.demo.patfinderEx.model.Level;
+
+import java.util.List;
 
 public class UserRegisterDTO {
 
@@ -18,6 +21,8 @@ public class UserRegisterDTO {
 
     @Email
     private String email;
+
+    private Level level;
 
     @Size(min = 5, max = 100)
     private String password;
@@ -74,5 +79,13 @@ public class UserRegisterDTO {
 
     public void setConfirmPassword(String confirmPassword) {
         this.confirmPassword = confirmPassword;
+    }
+
+    public Level getLevel() {
+        return level;
+    }
+
+    public void setLevel(Level level) {
+        this.level = level;
     }
 }
