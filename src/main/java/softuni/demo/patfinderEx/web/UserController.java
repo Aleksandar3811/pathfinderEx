@@ -51,9 +51,9 @@ public class UserController {
     }
 
     @GetMapping("/login")
-    public ModelAndView viewLogin() {
+    public ModelAndView viewLogin(UserLoginDTO userLoginDTO) {
         ModelAndView mv = new ModelAndView();
-        mv.addObject("loginData", new UserLoginDTO());
+        mv.addObject("loginData", userLoginDTO);
         mv.setViewName("login");
         return mv;
     }
@@ -75,5 +75,21 @@ public class UserController {
         mv.setViewName("redirect:/");
         return mv;
 
+    }
+
+    @PostMapping("/logout")
+    public String doLogin() {
+        userService.logout();
+      return  "redirect:/";
+
+
+    }
+
+    @GetMapping("/profile")
+    public ModelAndView viewProfile() {
+        ModelAndView mv = new ModelAndView();
+        mv.addObject("profileData", userService.getProfileData());
+        mv.setViewName("profile");
+        return mv;
     }
 }

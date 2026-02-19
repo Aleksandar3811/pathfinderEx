@@ -3,6 +3,8 @@ package softuni.demo.patfinderEx.web;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
+import softuni.demo.patfinderEx.model.CategoryType;
+import softuni.demo.patfinderEx.model.Level;
 import softuni.demo.patfinderEx.model.dto.RouteShortInfoDTO;
 import softuni.demo.patfinderEx.service.RouteService;
 
@@ -27,5 +29,15 @@ public class RouteController {
         mv.addObject("allRoutes", routes);
         return mv;
 
+    }
+
+    @GetMapping("/add-route")
+    public ModelAndView addRoute() {
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("add-route");
+        mv.addObject("route", new RouteShortInfoDTO());
+        mv.addObject("levels", Level.values());
+        mv.addObject("categories", CategoryType.values());
+        return mv;
     }
 }

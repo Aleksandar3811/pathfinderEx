@@ -6,6 +6,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import softuni.demo.patfinderEx.model.User;
 import softuni.demo.patfinderEx.model.dto.UserLoginDTO;
+import softuni.demo.patfinderEx.model.dto.UserProfileDTO;
 import softuni.demo.patfinderEx.model.dto.UserRegisterDTO;
 import softuni.demo.patfinderEx.repository.UserRepository;
 
@@ -40,5 +41,13 @@ public class UserService {
 
         }
 
+    }
+
+    public void logout() {
+        currentUser.setUser(null);
+    }
+
+    public UserProfileDTO getProfileData(){
+        return modelMapper.map(currentUser.getUser(), UserProfileDTO.class);
     }
 }

@@ -12,11 +12,19 @@ public class HomeController {
     @GetMapping("/")
     public ModelAndView index() {
 
-        double sofiaTemp= new Random().nextDouble();
+        double sofiaTemp = new Random().nextDouble();
 
         ModelAndView mv = new ModelAndView("index");
         mv.addObject("sofiaTemp", sofiaTemp);
 
+
+        return mv;
+    }
+
+    @GetMapping("/about")
+    public ModelAndView about() {
+
+        ModelAndView mv = new ModelAndView("about");
 
         return mv;
     }
